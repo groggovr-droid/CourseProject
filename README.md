@@ -1,1 +1,1 @@
-# CourseProject
+# CourseProject - created by Andrei Shcherbo
