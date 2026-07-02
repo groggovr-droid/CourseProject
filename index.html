@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"> -->
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <link rel="icon" href="media/ACTIVEBOX.svg" type="image/svg+xml">
+    <title>Course Work</title>
 </head>
+
 <body>
-    
+
+    <div class="mainblock">
+        <header class="header">
+            <div class="container header__container">
+                <a class="header__logo">
+                    <svg width="121" height="26" viewBox="0 0 121 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.0136 20.7239H7.81939L6.38839 25.4018H0L9.09706 0.361164H14.7188L23.884 25.4018H17.4616L16.0136 20.7239ZM9.25038 16.0632H14.5826L11.908 7.37806L9.25038 16.0632Z"
+                            fill="#656980" />
+                        <path
+                            d="M45.4001 16.9231C45.3206 18.6659 44.855 20.208 44.0032 21.5494C43.1514 22.8794 41.9532 23.9113 40.4087 24.6451C38.8755 25.3789 37.1208 25.7458 35.1446 25.7458C31.8851 25.7458 29.3184 24.6738 27.4445 22.5297C25.5706 20.3857 24.6336 17.3588 24.6336 13.449V12.2108C24.6336 9.75715 25.0538 7.6131 25.8943 5.77862C26.746 3.93267 27.9669 2.51095 29.5569 1.51345C31.1469 0.504483 32.9868 0 35.0765 0C38.0861 0 40.5052 0.802586 42.3337 2.40776C44.1622 4.00146 45.2014 6.20284 45.4512 9.01189H39.4887C39.4433 7.48698 39.0629 6.39202 38.3474 5.72702C37.6319 5.06202 36.5416 4.72952 35.0765 4.72952C33.5887 4.72952 32.4984 5.29133 31.8056 6.41495C31.1129 7.53857 30.7494 9.33293 30.7154 11.798V13.5694C30.7154 16.2409 31.0447 18.1499 31.7034 19.2965C32.3735 20.443 33.5206 21.0163 35.1446 21.0163C36.5189 21.0163 37.5694 20.6895 38.2962 20.036C39.0231 19.3824 39.4092 18.3448 39.4547 16.9231H45.4001Z"
+                            fill="#656980" />
+                        <path d="M67.1888 5.02189H59.7442V25.4018H53.7647V5.02189H46.4563V0.361164H67.1888V5.02189Z"
+                            fill="#656980" />
+                        <path d="M76.0985 25.4018H70.136V0.361164H76.0985V25.4018Z" fill="#656980" />
+                        <path
+                            d="M89.8803 18.5913L94.8207 0.361164H101.499L93.1512 25.4018H86.6095L78.3301 0.361164H84.957L89.8803 18.5913Z"
+                            fill="#656980" />
+                        <path
+                            d="M118.705 14.7905H109.301V20.7583H120.408V25.4018H103.322V0.361164H120.442V5.02189H109.301V10.3018H118.705V14.7905Z"
+                            fill="#656980" />
+                    </svg>
+                    <svg width="61" height="26" viewBox="0 0 61 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 25.3846V0.343965H6.52467C9.1936 0.343965 11.2095 0.89431 12.5723 1.995C13.9466 3.08422 14.6337 4.6722 14.6337 6.75892C14.6337 8.27236 14.2532 9.52784 13.4923 10.5253C12.7313 11.5228 11.6581 12.1592 10.2725 12.4343C11.8398 12.6407 13.1459 13.3287 14.1907 14.4981C15.2356 15.6562 15.758 16.9862 15.758 18.4881C15.758 20.6207 15.0709 22.3061 13.6967 23.5444C12.3338 24.7712 10.4315 25.3846 7.98974 25.3846H0ZM0.919928 13.0191V24.4559H8.09196C10.193 24.4559 11.8398 23.9342 13.0323 22.8909C14.2362 21.8361 14.8381 20.3799 14.8381 18.5225C14.8381 16.9403 14.2589 15.639 13.1005 14.6185C11.942 13.5866 10.3918 13.0535 8.44971 13.0191H0.919928ZM0.919928 12.0904H6.86539C9.12546 12.0904 10.829 11.6547 11.9761 10.7833C13.1232 9.90047 13.6967 8.53607 13.6967 6.69012C13.6967 3.13582 11.3742 1.33 6.7291 1.27267H0.919928V12.0904Z"
+                            fill="white" />
+                        <path
+                            d="M38.6199 14.7389C38.6199 16.9059 38.2338 18.8264 37.4615 20.5003C36.7006 22.1628 35.6103 23.4527 34.1907 24.3699C32.771 25.2757 31.1356 25.7286 29.2844 25.7286C26.4905 25.7286 24.2304 24.7254 22.5042 22.7189C20.7779 20.7124 19.9147 18.0066 19.9147 14.6013V10.9897C19.9147 8.83418 20.2952 6.91944 21.0561 5.24547C21.8284 3.57151 22.9244 2.28164 24.344 1.37586C25.775 0.45862 27.4104 0 29.2503 0C31.1015 0 32.7369 0.45862 34.1566 1.37586C35.5876 2.28164 36.6892 3.57724 37.4615 5.26267C38.2338 6.93663 38.6199 8.84564 38.6199 10.9897V14.7389ZM37.7 10.9553C37.7 7.9284 36.9391 5.50344 35.4172 3.68043C33.8954 1.84595 31.8397 0.928706 29.2503 0.928706C26.6949 0.928706 24.6563 1.84021 23.1345 3.66323C21.6126 5.47478 20.8517 7.9456 20.8517 11.0757V14.7389C20.8517 16.7339 21.1924 18.4996 21.8738 20.036C22.5666 21.5609 23.549 22.7361 24.821 23.5616C26.093 24.3871 27.5808 24.7999 29.2844 24.7999C31.8738 24.7999 33.9238 23.8884 35.4343 22.0654C36.9448 20.2424 37.7 17.7543 37.7 14.6013V10.9553Z"
+                            fill="white" />
+                        <path
+                            d="M50.9197 11.884L58.9265 0.343965H60.0849L51.4989 12.6063L60.4086 25.3846H59.2672L50.9197 13.3287L42.5381 25.3846H41.4308L50.3405 12.6063L41.7545 0.343965H42.9129L50.9197 11.884Z"
+                            fill="white" />
+                    </svg>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__items">
+                        <li class="nav__item"><a class="nav__link" href="#">features</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">works</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">our team</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">testimonials</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">download</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__toggle">
+                    <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0H25.3585V3H0V0ZM0 7.5H25.3585V10.5H0V7.5ZM0 15H25.3585V18H0V15Z" fill="white" />
+                    </svg>
+
+                </div>
+            </div>
+        </header>
+
+        <section class="banner">
+            <div class="container banner__container">
+                <h1 class="banner__title">Your Favorite One Page Multi Purpose Template</h1>
+                <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus
+                    magna vel scelerisqe nisl consectetur et.</p>
+                <button class="button button__banner">Find Out More</button>
+            </div>
+        </section>
+    </div>
+
+    <section class="download">
+
+        <div class="container download__container">
+            <h2 class="download__title">Are You Ready to Start? Download Now For Free!</h2>
+            <p class="download__text">Fusce dapibus, tellus ac cursus commodo</p>
+            <button class="button button__download">download here</button>
+        </div>
+
+    </section>
+
 </body>
+
 </html>
