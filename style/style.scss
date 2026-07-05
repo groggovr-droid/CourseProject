@@ -10,6 +10,11 @@ $advantage-text: #6C7279;
 $bg-content: rgba(255, 67, 67, 0.8);
 
 
+//desktop-first
+//desktop: 1025px - ...
+//tablet: 768px - 1024px
+//mobile: 320px - 767px
+
 
 @mixin font($size, $height, $weight) {
     font-size: $size;
@@ -34,13 +39,16 @@ a {
 }
 
 
+.mainblock {
+    position: relative;
+}
+
+
 //main container
 .container {
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
-
-    position: relative;
 }
 
 
@@ -54,6 +62,11 @@ a {
     border-bottom: 1px solid #BABBC5;
     padding: 38px 0 36px;
 
+    @media only screen and (max-width: 767px) {
+        padding: 19px 0;
+        border-bottom: none;
+    }
+
     &__container {
         display: flex;
         align-items: center;
@@ -62,23 +75,36 @@ a {
 
     &__toggle {
         display: none;
+
+        @media only screen and (max-width: 767px) {
+            display: block;
+        }
     }
 }
 
 .nav {
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
 
     &__items {
         display: flex;
-
-        @include font(13px, 15px, 700);
-        text-transform: uppercase;
-
-        list-style-type: none;
         column-gap: 40px;
+        list-style-type: none;
+
+        @media only screen and (max-width: 1024px) {
+            column-gap: 25px;
+        }
     }
 
     &__link {
+        @include font(13px, 15px, 700);
+        text-transform: uppercase;
         color: $white;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(12px, 14px, 700);
+        }
     }
 }
 
@@ -94,6 +120,16 @@ a {
 
     position: relative;
 
+    @media only screen and (max-width: 1024px) {
+        padding: 257px 0 126px;
+        background-image: url(../media/img_tablet.jpg)
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 106px 0 52px;
+        background-image: url(../media/img_mobile.jpg);
+    }
+
     &::before {
         content: "";
         display: block;
@@ -108,12 +144,26 @@ a {
         position: absolute;
     }
 
+    &__container {
+        position: relative;
+    }
+
     &__title {
         @include font(64px, 75px, 900);
         text-transform: uppercase;
         color: $white;
 
         margin-bottom: 31px;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(48px, 56px, 900);
+            margin-bottom: 62px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(36px, 42px, 900);
+            margin-bottom: 41px;
+        }
     }
 
     &__text {
@@ -121,6 +171,16 @@ a {
         color: $white;
 
         margin-bottom: 80px;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(18px, 21px, 400);
+            margin-bottom: 89px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(14px, 16px, 400);
+            margin-bottom: 59px;
+        }
     }
 }
 
@@ -133,26 +193,64 @@ a {
     padding: 26px;
     min-width: 370px;
     border: none;
+
+    @media only screen and (max-width: 1024px) {
+        min-width: 314px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        min-width: 280px;
+    }
 }
 
 
 //advantage
 .advantage {
+    padding: 100px 0;
+
+    @media only screen and (max-width: 1024px) {
+        padding: 80px 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 60px 0;
+    }
 
     &__container {
-        margin: 100px auto;
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 30px;
         grid-row-gap: 88px;
         text-align: center;
+
+        @media only screen and (max-width: 1024px) {
+            grid-column-gap: 20px;
+            grid-row-gap: 49px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 41px;
+        }
     }
 
     &__logo {
         width: 100px;
         height: 100px;
         margin: 0 auto 51px;
+
+        @media only screen and (max-width: 1024px) {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 44px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 37px;
+        }
     }
 
     &__title {
@@ -161,11 +259,29 @@ a {
         text-transform: uppercase;
 
         margin-bottom: 42px;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(18px, 21px, 900);
+            margin-bottom: 24px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(18px, 21px, 900);
+            margin-bottom: 9px;
+        }
     }
 
     &__text {
         @include font(18px, 21px, 400);
         color: $advantage-text;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(14px, 16px, 400);
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(14px, 16px, 400);
+        }
     }
 }
 
@@ -174,6 +290,10 @@ a {
 .projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
+    @media only screen and (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .project {
@@ -217,14 +337,31 @@ a {
         text-transform: uppercase;
 
         margin-bottom: 36px;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(18px, 21px, 900);
+            margin-bottom: 22px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(18px, 21px, 900);
+            margin-bottom: 7px;
+        }
     }
 
     &__text {
         @include font(18px, 21px, 400);
         color: $white;
         text-transform: capitalize;
-    }
 
+        @media only screen and (max-width: 1024px) {
+            @include font(14px, 16px, 400);
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(14px, 16px, 400);
+        }
+    }
 }
 
 
@@ -233,12 +370,30 @@ a {
     padding: 170px 0;
     text-align: center;
 
+    @media only screen and (max-width: 1024px) {
+        padding: 127px 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 53px 0;
+    }
+
     &__title {
         @include font(30px, 35px, 500);
         text-transform: capitalize;
         color: $black;
 
         margin-bottom: 22px;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(24px, 28px, 500);
+            margin-bottom: 21px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            @include font(18px, 21px, 500);
+            margin-bottom: 12px;
+        }
     }
 
     &__text {
@@ -247,212 +402,21 @@ a {
         color: $black;
 
         margin-bottom: 50px;
-    }
-}
 
-
-//desktop-first
-//desktop: 1025px - ...
-//tablet: 768px - 1024px
-//mobile: 320px - 767px
-
-//tablet: 768px - 1024px
-@media only screen and (max-width: 1024px) {
-    .container {
-        max-width: 984px;
-    }
-
-    .nav {
-
-        &__items {
-            @include font(12px, 14px, 700);
-
-            column-gap: 25px;
-        }
-    }
-
-
-    .banner {
-        padding: 257px 0 126px;
-        background-image: url(../media/img_tablet.jpg);
-
-        &__title {
-            @include font(48px, 56px, 900);
-
-            margin-bottom: 62px;
-        }
-
-        &__text {
-            @include font(18px, 21px, 400);
-
-            margin-bottom: 89px;
-        }
-    }
-
-    .button__banner {
-        min-width: 314px;
-    }
-
-
-    .advantage {
-        &__container {
-            margin: 80px auto;
-            grid-column-gap: 20px;
-            grid-row-gap: 49px;
-        }
-
-        &__logo {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto 44px;
-        }
-
-        &__title {
-            @include font(18px, 21px, 900);
-
-            margin-bottom: 24px;
-        }
-
-        &__text {
-            @include font(14px, 16px, 400);
-
-        }
-    }
-
-
-    .project {
-        &__title {
-            @include font(18px, 21px, 900);
-
-            margin-bottom: 22px;
-        }
-
-        &__text {
-            @include font(14px, 16px, 400);
-        }
-    }
-
-
-    .download {
-        padding: 127px 0;
-
-        &__title {
-            @include font(24px, 28px, 500);
-
-            margin-bottom: 21px;
-        }
-
-        &__text {
+        @media only screen and (max-width: 1024px) {
             @include font(14px, 16px, 700);
-
             margin-bottom: 45px;
         }
-    }
 
-    .button__download {
-        min-width: 565px;
-    }
-}
-
-
-//mobile: 320px - 767px
-@media only screen and (max-width: 767px) {
-    .header {
-        padding: 19px 0;
-        border-bottom: none;
-
-        &__toggle {
-            display: block;
-        }
-    }
-
-    .nav {
-        display: none;
-    }
-
-
-    .banner {
-        padding: 106px 0 52px;
-        background-image: url(../media/img_mobile.jpg);
-
-        &__title {
-            @include font(36px, 42px, 900);
-
-            margin-bottom: 41px;
-        }
-
-        &__text {
-            @include font(14px, 16px, 400);
-
-            margin-bottom: 59px;
-        }
-    }
-
-    .button {
-        min-width: 280px;
-    }
-
-
-    .advantage {
-
-        &__container {
-            margin: 60px auto;
-            grid-template-columns: 1fr;
-            grid-row-gap: 41px;
-        }
-
-        &__logo {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 37px;
-        }
-
-        &__title {
-            @include font(18px, 21px, 900);
-
-            margin-bottom: 9px;
-        }
-
-        &__text {
-            @include font(14px, 16px, 400);
-        }
-    }
-
-
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .project {
-
-        &__title {
-            @include font(18px, 21px, 900);
-
-            margin-bottom: 7px;
-        }
-
-        &__text {
-            @include font(14px, 16px, 400);
-        }
-    }
-
-
-
-
-    .download {
-        padding: 53px 0;
-
-        &__title {
-            @include font(18px, 21px, 500);
-
-            margin-bottom: 12px;
-        }
-
-        &__text {
+        @media only screen and (max-width: 767px) {
             @include font(13px, 15px, 700);
-
             margin-bottom: 12px;
         }
     }
 
+    @media only screen and (max-width: 1024px) {
+        .button__download {
+            min-width: 565px;
+        }
+    }
 }
