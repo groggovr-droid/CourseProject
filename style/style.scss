@@ -198,6 +198,12 @@ a {
         min-width: 314px;
     }
 
+    &_download {
+        @media only screen and (max-width: 1024px) {
+            min-width: 565px;
+        }
+    }
+
     @media only screen and (max-width: 767px) {
         min-width: 280px;
     }
@@ -411,12 +417,6 @@ a {
         @media only screen and (max-width: 767px) {
             @include font(13px, 15px, 700);
             margin-bottom: 12px;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        .button__download {
-            min-width: 565px;
         }
     }
 }

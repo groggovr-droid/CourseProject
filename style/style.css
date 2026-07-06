@@ -183,6 +183,11 @@ a {
     min-width: 314px;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .button_download {
+    min-width: 565px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .button {
     min-width: 280px;
@@ -430,10 +435,5 @@ a {
     line-height: 15px;
     font-weight: 700;
     margin-bottom: 12px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .download .button__download {
-    min-width: 565px;
   }
 }/*# sourceMappingURL=style.css.map */
