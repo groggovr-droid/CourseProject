@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
 
 // font-family: "Raleway", sans-serif;
+//font-family: "Cardo", serif;
 
 $font: "Raleway", sans-serif;
+$font_Cardo: "Cardo", serif;
 $white: #ffffff;
 $black: #000000;
 $title-color: #2D3033;
@@ -109,29 +112,63 @@ a {
     //     }
     // }
 
-    &__link-neon {
-        @include font(13px, 15px, 700);
-        text-transform: uppercase;
-        color: $white;
-        transition: all 0.5s ease-out;
+    @keyframes neontext {
+        0% {
+            @include font(13px, 15px, 700);
+        }
 
-        &:hover {
-            @include font(15px, 18px, 700);
+        33% {
+            @include font(14px, 16px, 700);
+            text-shadow:
+                0 0 7px #613edf,
+                0 0 10px #613edf,
+        }
 
+        66% {
+            @include font(15px, 17px, 700);
+            text-shadow:
+                0 0 7px #613edf,
+                0 0 10px #613edf,
+                0 0 21px #613edf,
+                0 0 42px #613edf,
+        }
+
+        100% {
+            @include font(16px, 18px, 700);
             text-shadow:
                 0 0 7px #613edf,
                 0 0 10px #613edf,
                 0 0 21px #613edf,
                 0 0 42px #613edf,
                 0 0 82px #613edf,
-                // 0 0 7px #fff,
-                // 0 0 10px #fff,
-                // 0 0 21px #fff,
-                // 0 0 42px rgb(255, 255, 255),
-                // 0 0 82px rgb(255, 255, 255),
-                // 0 0 92px rgb(255, 255, 255),
-                // 0 0 102px rgb(255, 255, 255),
-                // 0 0 151px rgb(255, 255, 255);
+                0 0 92px #613edf,
+        }
+    }
+
+    &__link-neon {
+        @include font(13px, 15px, 700);
+        text-transform: uppercase;
+        color: $white;
+        // transition: all 0.9s ease-out;
+
+        &:hover {
+            animation: neontext 0.8s ease-out 0s 1 normal forwards;
+            // @include font(15px, 18px, 700);
+
+            // text-shadow:
+            //     0 0 7px #613edf,
+            //     0 0 10px #613edf,
+            //     0 0 21px #613edf,
+            //     0 0 42px #613edf,
+            //     0 0 82px #613edf,
+            //     // 0 0 7px #fff,
+            //     // 0 0 10px #fff,
+            //     // 0 0 21px #fff,
+            //     // 0 0 42px rgb(255, 255, 255),
+            //     // 0 0 82px rgb(255, 255, 255),
+            //     // 0 0 92px rgb(255, 255, 255),
+            //     // 0 0 102px rgb(255, 255, 255),
+            //     // 0 0 151px rgb(255, 255, 255);
         }
     }
 }
@@ -730,6 +767,140 @@ a {
 }
 
 
+//swiper
+.swiper {
+
+    &__container {
+        margin: 0 170px;
+
+        @media only screen and (max-width: 1024px) {
+            margin: 0 20px;
+        }
+    }
+}
+
+.community {
+
+    background: #5C3249;
+
+    &__items {
+        color: $white;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 31px;
+
+        @media only screen and (max-width: 1024px) {
+            column-gap: 20px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            row-gap: 25px;
+
+            text-align: center;
+
+            margin-bottom: 95px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 570 / 490;
+        object-fit: cover;
+
+        @media only screen and (max-width: 1024px) {
+            aspect-ratio: 482 / 332;
+        }
+
+        @media only screen and (max-width: 767px) {
+            aspect-ratio: 280 / 218;
+        }
+    }
+
+    &__info {
+        padding: 116px 0;
+
+        @media only screen and (max-width: 1024px) {
+            padding: 110px 0 104px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            padding: 0px;
+        }
+    }
+
+    &__text {
+        padding: 10px 2px;
+
+        @include font(36px, 49px, 400);
+        text-transform: capitalize;
+
+        font-family: $font_Cardo;
+        font-style: italic;
+
+        color: #FFFFFF;
+
+        @media only screen and (max-width: 1024px) {
+            @include font(24px, 32px, 400);
+        }
+
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__author {
+        padding: 5px 2px;
+
+        @include font(13px, 15px, 700);
+
+        @media only screen and (max-width: 1024px) {
+            @include font(12px, 14px, 700);
+        }
+
+        @media only screen and (max-width: 767px) {}
+    }
+
+
+
+
+}
+
+.swiper-pagination {
+    position: static;
+    margin-top: 31px;
+
+    @media only screen and (max-width: 1024px) {
+        margin-top: 24px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        margin-top: 23px;
+    }
+
+    &-bullet {
+        width: 14px;
+        height: 14px;
+
+        background-color: #ffffff;
+        border: #7E5D6F solid 1px;
+        opacity: 1;
+
+        @media only screen and (max-width: 1024px) {
+            width: 9.5px;
+            height: 9.5px;
+        }
+    }
+
+    &-bullet-active {
+        background: #7E5D6F;
+    }
+}
+
+
 //footer
 .footer {
 
@@ -1018,7 +1189,7 @@ a {
 
             &:hover {
                 background: #fffb00;
-                transform: scale(1.2) rotate(15deg);
+                transform: scale(1.5) rotate(15deg);
                 border-color: transparent;
                 // border: #fffb00 dashed 1px;
                 border-radius: 10px;

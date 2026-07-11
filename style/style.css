@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -69,19 +70,40 @@ a {
          column-gap: 25px;
   }
 }
+@keyframes neontext {
+  0% {
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 700;
+  }
+  33% {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-shadow: 0 0 7px #613edf, 0 0 10px #613edf;
+  }
+  66% {
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 700;
+    text-shadow: 0 0 7px #613edf, 0 0 10px #613edf, 0 0 21px #613edf, 0 0 42px #613edf;
+  }
+  100% {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    text-shadow: 0 0 7px #613edf, 0 0 10px #613edf, 0 0 21px #613edf, 0 0 42px #613edf, 0 0 82px #613edf, 0 0 92px #613edf;
+  }
+}
 .nav__link-neon {
   font-size: 13px;
   line-height: 15px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
-  transition: all 0.5s ease-out;
 }
 .nav__link-neon:hover {
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: 700;
-  text-shadow: 0 0 7px #613edf, 0 0 10px #613edf, 0 0 21px #613edf, 0 0 42px #613edf, 0 0 82px #613edf;
+  animation: neontext 0.8s ease-out 0s 1 normal forwards;
 }
 
 .banner {
@@ -636,6 +658,136 @@ a {
   }
 }
 
+.swiper__container {
+  margin: 0 170px;
+}
+@media only screen and (max-width: 1024px) {
+  .swiper__container {
+    margin: 0 20px;
+  }
+}
+
+.community {
+  background: #5C3249;
+}
+.community__items {
+  color: #ffffff;
+}
+.community__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 31px;
+       column-gap: 31px;
+}
+@media only screen and (max-width: 1024px) {
+  .community__item {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .community__item {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+    text-align: center;
+    margin-bottom: 95px;
+  }
+}
+.community__image {
+  width: 100%;
+  aspect-ratio: 570/490;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 1024px) {
+  .community__image {
+    aspect-ratio: 482/332;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .community__image {
+    aspect-ratio: 280/218;
+  }
+}
+.community__info {
+  padding: 116px 0;
+}
+@media only screen and (max-width: 1024px) {
+  .community__info {
+    padding: 110px 0 104px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .community__info {
+    padding: 0px;
+  }
+}
+.community__text {
+  padding: 10px 2px;
+  font-size: 36px;
+  line-height: 49px;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-family: "Cardo", serif;
+  font-style: italic;
+  color: #FFFFFF;
+}
+@media only screen and (max-width: 1024px) {
+  .community__text {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .community__text {
+    margin-bottom: 15px;
+  }
+}
+.community__author {
+  padding: 5px 2px;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 1024px) {
+  .community__author {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+  }
+}
+.swiper-pagination {
+  position: static;
+  margin-top: 31px;
+}
+@media only screen and (max-width: 1024px) {
+  .swiper-pagination {
+    margin-top: 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .swiper-pagination {
+    margin-top: 23px;
+  }
+}
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  border: #7E5D6F solid 1px;
+  opacity: 1;
+}
+@media only screen and (max-width: 1024px) {
+  .swiper-pagination-bullet {
+    width: 9.5px;
+    height: 9.5px;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: #7E5D6F;
+}
+
 .footer-top {
   padding: 71px 0 67px;
   background-image: url(../media/footer/footer_bg_top.jpg);
@@ -833,7 +985,7 @@ a {
 }
 .social__item_footer:hover {
   background: #fffb00;
-  transform: scale(1.2) rotate(15deg);
+  transform: scale(1.5) rotate(15deg);
   border-color: transparent;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 2px #fffb00;
